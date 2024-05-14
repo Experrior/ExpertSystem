@@ -1,0 +1,58 @@
+{
+  "facts": [
+    "headache", "hangover", "sleep_deprived", "cut", "bright_blood", "dark_blood", "stomach_pain"
+  ],
+  "derived_facts": [
+    {"cut": ["bright_blood", "dark_blood"]}
+  ],
+  "rules": [
+    {
+      "conditions": ["headache"],
+      "output": "You should relax"
+    },
+    {
+      "conditions": ["hangover"],
+      "output": "Drink plenty of water and get some rest"
+    },
+    {
+      "conditions": ["sleep_deprived"],
+      "output": "Try to get a good night's sleep"
+    },
+    {
+      "conditions": ["shallow_cut"],
+      "output": "Clean the wound with soap and water, then apply an antiseptic"
+    },
+    {
+      "conditions": ["bright_blood"],
+      "output": "Apply direct pressure to the wound and seek immediate medical help"
+    },
+    {
+      "conditions": ["dark_blood"],
+      "output": "Elevate the injured area and apply pressure to control bleeding, then seek medical attention"
+    },
+    {
+      "conditions": ["stomach_pain"],
+      "output": "Avoid heavy or spicy foods, and consider taking an antacid"
+    },
+    {
+      "conditions": ["headache", "hangover"],
+      "output": "Rest, drink water, and avoid alcohol and caffeine"
+    },
+    {
+      "conditions": ["headache", "sleep_deprived"],
+      "output": "Take a short nap or try relaxation techniques"
+    },
+    {
+      "conditions": ["shallow_cut", "bright_blood"],
+      "output": "Apply pressure to the wound and seek medical attention"
+    },
+    {
+      "conditions": ["shallow_cut", "dark_blood"],
+      "output": "Apply pressure and elevate the wound, then seek medical attention"
+    },
+    {
+      "conditions": ["stomach_pain", "hangover"],
+      "output": "Avoid fatty or greasy foods and drink herbal tea to soothe the stomach"
+    }
+  ]
+}
