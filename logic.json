@@ -1,58 +1,115 @@
 {
   "facts": [
-    "headache", "hangover", "sleep_deprived", "cut", "bright_blood", "dark_blood", "stomach_pain"
+    "headache",
+    "cut",
+    "stomach pain",
+    "vomit",
+    "fever",
+    "diarrhea",
+    "sore throat"
   ],
-  "derived_facts": [
-    {"cut": ["bright_blood", "dark_blood"]}
-  ],
-  "rules": [
+  "derived_facts": {
+    "cut": [
+      "bright blood",
+      "dark blood"
+    ],
+    "headache": [
+      "hangover",
+      "migraine",
+      "sleep deprived"
+    ],
+    "fever": [
+      "low-grade fever",
+      "moderate fever",
+      "high fever"
+    ],
+    "diarrhea": [
+      "watery",
+      "loose",
+      "bloody"
+    ]
+  },
+"rules": [
     {
       "conditions": ["headache"],
       "output": "You should relax"
     },
     {
-      "conditions": ["hangover"],
-      "output": "Drink plenty of water and get some rest"
+      "conditions": ["cut", "bright blood"],
+      "output": "Apply pressure to the wound and seek immediate medical help"
     },
     {
-      "conditions": ["sleep_deprived"],
-      "output": "Try to get a good night's sleep"
-    },
-    {
-      "conditions": ["shallow_cut"],
-      "output": "Clean the wound with soap and water, then apply an antiseptic"
-    },
-    {
-      "conditions": ["bright_blood"],
-      "output": "Apply direct pressure to the wound and seek immediate medical help"
-    },
-    {
-      "conditions": ["dark_blood"],
+      "conditions": ["cut", "dark blood"],
       "output": "Elevate the injured area and apply pressure to control bleeding, then seek medical attention"
-    },
-    {
-      "conditions": ["stomach_pain"],
-      "output": "Avoid heavy or spicy foods, and consider taking an antacid"
     },
     {
       "conditions": ["headache", "hangover"],
       "output": "Rest, drink water, and avoid alcohol and caffeine"
     },
     {
-      "conditions": ["headache", "sleep_deprived"],
+      "conditions": ["headache", "migraine"],
+      "output": "Dim the lights, rest in a quiet room, and consider taking migraine medication"
+    },
+    {
+      "conditions": ["headache", "sleep deprived"],
       "output": "Take a short nap or try relaxation techniques"
     },
     {
-      "conditions": ["shallow_cut", "bright_blood"],
-      "output": "Apply pressure to the wound and seek medical attention"
+      "conditions": ["stomach pain"],
+      "output": "Avoid heavy or spicy foods, and consider taking an antacid"
     },
     {
-      "conditions": ["shallow_cut", "dark_blood"],
-      "output": "Apply pressure and elevate the wound, then seek medical attention"
+      "conditions": ["stomach pain", "vomit"],
+      "output": "Drink clear fluids and rest, and consider seeking medical advice if symptoms persist"
+    },
+   {
+      "conditions": ["cut", "bright blood"],
+      "output": "In case of cut with bright blood, clean the wound with mild soap and water, apply an antiseptic ointment, and cover with a sterile bandage. If bleeding persists, seek medical attention."
     },
     {
-      "conditions": ["stomach_pain", "hangover"],
-      "output": "Avoid fatty or greasy foods and drink herbal tea to soothe the stomach"
+      "conditions": ["cut", "dark blood"],
+      "output": "In case of cut with dark blood, apply firm pressure to the wound using a clean cloth or bandage.\n Elevate the injured area and seek immediate medical attention to assess for possible deep tissue or vascular damage."
+    },
+    {
+      "conditions": ["headache", "hangover"],
+      "output": "In case of headache due to hangover, drink plenty of water, rest, and consider taking over-the-counter pain relievers.\n Avoid alcohol and get adequate sleep to prevent future occurrences."
+    },
+    {
+      "conditions": ["headache", "migraine"],
+      "output": "In case of migraine headache, find a quiet, dark environment to rest.\n Use over-the-counter or prescription migraine medications as directed by your healthcare provider. Apply cold compresses to the forehead or neck."
+    },
+    {
+      "conditions": ["headache", "sleep deprived"],
+      "output": "In case of headache due to sleep deprivation, establish a regular sleep schedule, aiming for 7-9 hours of quality sleep per night. Avoid caffeine and electronic devices before bedtime. Practice relaxation techniques such as deep breathing or meditation."
+    },
+    {
+      "conditions": ["fever", "low-grade fever"],
+      "output": "In case of low-grade fever, rest, stay hydrated, and monitor your temperature.\n Consider taking over-the-counter fever reducers such as acetaminophen or ibuprofen as directed."
+    },
+    {
+      "conditions": ["fever", "moderate fever"],
+      "output": "In case of moderate fever, stay hydrated and rest.\n Take over-the-counter fever reducers such as acetaminophen or ibuprofen to lower your temperature, and seek medical attention if fever persists or worsens."
+    },
+    {
+      "conditions": ["fever", "high fever"],
+      "output": "In case of high fever, seek medical attention immediately.\n Take over-the-counter fever reducers to reduce discomfort while awaiting medical assessment. Stay hydrated and rest."
+    },
+    {
+      "conditions": ["diarrhea", "watery"],
+      "output": "In case of watery diarrhea, stay hydrated by drinking clear fluids such as water, broth, or electrolyte drinks.\n Avoid dairy, caffeine, and fatty or spicy foods. If diarrhea persists for more than 24 hours, seek medical attention."
+    },
+    {
+      "conditions": ["diarrhea", "loose"],
+      "output": "In case of loose diarrhea, eat bland, easily digestible foods such as bananas, rice, applesauce, and toast (BRAT diet).\n Stay hydrated with water, clear broths, or electrolyte drinks. Avoid caffeine and dairy."
+    },
+    {
+      "conditions": ["diarrhea", "bloody"],
+      "output": "In case of bloody diarrhea, seek medical attention immediately.\n Avoid anti-diarrheal medications until you've consulted a healthcare provider. Stay hydrated with clear fluids and avoid solid foods."
+    },
+    {
+      "conditions":["sore throat"],
+      "output": "In case of sore throat, We recommend tea from any of those herbs elderberry, linden, mullein, chamomile, thyme and sage.\nIn case of thyme one can also use inhalation."
+
     }
   ]
 }
